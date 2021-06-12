@@ -1,0 +1,13 @@
+.fieldInput {
+  padding: 15px 20px;
+  border: 1px solid #c4c4c4;
+  border-radius: 2px;
+  margin-bottom: 32px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.fieldInputError {
+  margin-bottom: 0;
+  border: 1px solid #e9275a;
+}

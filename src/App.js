@@ -1,24 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import { useReducer } from 'react';
+import { QueryClient, QueryClientProvider } from "react-query";
 
-function App() {
+import AppContext from "./contexts/AppContext";
+import { reducer, initialState } from "./contexts/reducer";
+
+import CharacterPreview from './screens/CharacterPreview';
+import CharacterConfig from './screens/CharacterConfig';
+import Header from './components/Header';
+import styles from './App.module.css';
+
+const App = () => {
+  const queryClient = new QueryClient();
+  const [state, dispatch] = useReducer(reducer, initialState);
+  const configScreen = state.screen === "config";
+  const screenTitle = configScreen ? "Welcome to Dungeons and Dragons character builder" : "Preview Dungeons and Dragons character"; 
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <QueryClientProvider client={queryClient}>
+      <AppContext.Provider value={{ state, dispatch }}>
+      <div className={styles.app}>
+        <Header screenTitle={screenTitle} />
+        <main>
+          {configScreen ? (
+            <CharacterConfig />
+          ) : (
+            <CharacterPreview />
+          )}
+        </main>
+      </div>
+      </AppContext.Provider>
+    </QueryClientProvider>
   );
 }
 
