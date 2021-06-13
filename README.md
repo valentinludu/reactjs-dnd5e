@@ -1,10 +1,10 @@
-# Getting Started with Dungeon and Dragons
+# Dungeon and Dragons Character Configurator
 
-React app for character configuration of the 5th Edition Dungeons and Dragons.
-
-API used: http://www.dnd5eapi.co/docs
+Character configuration of the 5th Edition Dungeons and Dragons built with React.
 
 Config your character as you please and see all the details of your new built character.
+
+API used: http://www.dnd5eapi.co/docs
 
 ## Available Scripts
 
