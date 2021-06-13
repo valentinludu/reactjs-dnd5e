@@ -1,8 +1,11 @@
-import styles from "./FieldLabel.module.css"
+import styles from "./FieldLabel.module.css";
 
-const FieldLabel = ({children, ...props}) => {
-
-    return <label className={styles.fieldLabel} {...props}>{children}</label>
+const FieldLabel = ({ children, ...props }) => {
+  return (
+    <label className={styles.fieldLabel} {...props}>
+      {children}
+    </label>
+  );
 };
 
 export default FieldLabel;
