@@ -20,6 +20,9 @@ jobs:
       - run:
           name: Run ESLint
           command: yarn lint
+      - run:
+          name: Run Stylelint
+          command: yarn stylelint
 
 workflows:
   heroku_deploy:
