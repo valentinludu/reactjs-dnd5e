@@ -1,4 +1,3 @@
-import React from "react";
 import styles from "./FieldError.module.css";
 
 const FieldError = ({ error }) => {
