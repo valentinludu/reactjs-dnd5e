@@ -19,7 +19,7 @@ const CharacterConfig = () => {
     state: { user },
     dispatch,
   } = useAppContext();
-  
+
   const { data: classes, isLoading: isClassesLoading } = useQuery(
     ["classesList", "classes"],
     fetchData

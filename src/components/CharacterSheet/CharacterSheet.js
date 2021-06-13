@@ -7,21 +7,24 @@ const CharacterSheet = ({
   startingEquipment,
   spells,
   reset,
+  loading,
 }) => {
+  if (loading) return <div className={styles.wrapper}>Loading...</div>;
+
   return (
     <div className={styles.wrapper}>
       {user.class && (
         <img
           height="100px"
           src={`/images/${user.class.toLowerCase()}.png`}
-          alt="user class"
+          alt={`${user.class} class symbol`}
         />
       )}
       <p>Name: {user.name}</p>
       <p>Age: {user.age}</p>
       <p>Race: {user.race}</p>
       <p>Class: {user.class}</p>
-      <p>Sublcass: {subclass}</p>
+      {(subclass, length > 0 && <p>Sublcass: {subclass}</p>)}
       {startingEquipment.length > 0 && (
         <p>
           Starting Equipment:
