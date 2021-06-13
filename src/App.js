@@ -18,7 +18,7 @@ const App = () => {
   return (
     <QueryClientProvider client={queryClient}>
       <AppContext.Provider value={{ state, dispatch }}>
-      <div className={styles.app}>
+      <div className={styles.app} data-testid="app">
         <Header screenTitle={screenTitle} />
         <main>
           {configScreen ? (
