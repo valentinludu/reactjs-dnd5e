@@ -24,7 +24,7 @@ const CharacterSheet = ({
       <p>Age: {user.age}</p>
       <p>Race: {user.race}</p>
       <p>Class: {user.class}</p>
-      {subclass.length > 0 && <p>Sublcass: {subclass}</p>}
+      {subclass && <p>Sublcass: {subclass}</p>}
       {startingEquipment.length > 0 && (
         <p>
           Starting Equipment:

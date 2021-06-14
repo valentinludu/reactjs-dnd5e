@@ -61,7 +61,6 @@ const CharacterConfig = () => {
       class: values.class.label,
       race: values.race.label,
     };
-    console.log(userConfig);
     dispatch(addUserConfig(userConfig));
     sessionStorage.setItem("userConfig", JSON.stringify(userConfig));
   };
