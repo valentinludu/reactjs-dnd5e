@@ -32,7 +32,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "lint": "eslint src/**/*.js",
-    "stylelint": "stylelint src/**/*.css",
+    "lint:css": "stylelint src/**/*.css",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -55,15 +55,15 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged",
+      "pre-commit": "lint-staged --verbose",
       "pre-push": "yarn test"
     }
   },
   "lint-staged": {
-    "src/**/*.{js,jsx.json,css,md}": [
-      "prettier --write"
-    ],
-    "src/**/*.css": "stylelint --fix",
-    "*.js": "eslint --fix"
+    "src/**/*.{js,jsx,css,md}": [
+      "prettier --write",
+      "stylelint --fix",
+      "eslint --fix"
+    ]
   }
 }
