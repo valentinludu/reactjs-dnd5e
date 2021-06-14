@@ -15,7 +15,8 @@ const CharacterSheet = ({
     <div className={styles.wrapper}>
       {user.class && (
         <img
-          height="100px" src={`/images/${user.class.toLowerCase()}.png`}
+          height="100px"
+          src={`/images/${user.class.toLowerCase()}.png`}
           alt={`${user.class} class symbol`}
         />
       )}
