@@ -22,7 +22,7 @@ jobs:
           command: yarn lint
       - run:
           name: Run Stylelint
-          command: yarn stylelint
+          command: yarn lint:css
 
 workflows:
   heroku_deploy:
