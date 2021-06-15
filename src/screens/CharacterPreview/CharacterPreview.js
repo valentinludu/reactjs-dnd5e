@@ -12,12 +12,13 @@ const CharacterPreview = () => {
     state: { user },
     dispatch,
   } = useAppContext();
-  const { data: subclassNameData, loading: subclassesNamesLoading } = useQuery(
-    ["subclasses", `classes/${user.class.toLowerCase()}/subclasses`],
-    fetchData
-  );
+  const { data: subclassNameData, isLoading: subclassesNamesLoading } =
+    useQuery(
+      ["subclasses", `classes/${user.class.toLowerCase()}/subclasses`],
+      fetchData
+    );
   const subclassName = subclassNameData && subclassNameData.results[0].name;
-  const { data: equipmentData, loading: equipmentLoading } = useQuery(
+  const { data: equipmentData, isLoading: equipmentLoading } = useQuery(
     [
       `${user.class.toLowerCase()}_starting_equipment`,
       `classes/${user.class.toLowerCase()}/starting-equipment`,
@@ -28,7 +29,7 @@ const CharacterPreview = () => {
     (equipmentData && equipmentData.starting_equipment) ||
     []
   ).map((equip) => equip.equipment.name);
-  const { data: classesSpellsData, loading: spellsLoading } = useQuery(
+  const { data: classesSpellsData, isLoading: spellsLoading } = useQuery(
     [
       `${user.class.toLowerCase()}_spells`,
       `classes/${user.class.toLowerCase()}/spells`,
@@ -39,7 +40,7 @@ const CharacterPreview = () => {
     (classesSpellsData && classesSpellsData.results) ||
     []
   ).map(({ name }) => name);
-  const { data: sublcassesData, loading: subclassesLoading } = useQuery(
+  const { data: sublcassesData, isLoading: subclassesLoading } = useQuery(
     [
       `${subclassName && subclassName.toLowerCase()}_subclassesData`,
       `subclasses/${subclassName ? subclassName.toLowerCase() : undefined}`,
